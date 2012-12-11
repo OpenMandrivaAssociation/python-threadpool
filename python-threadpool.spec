@@ -43,3 +43,13 @@ rm -rf %{buildroot}
 %doc CHANGELOG.txt README.txt TODO.txt doc/*
 %{py_puresitedir}/*
 
+
+
+%changelog
+* Wed Mar 16 2011 Oden Eriksson <oeriksson@mandriva.com> 1.2.7-1mdv2011.0
++ Revision: 645589
+- import python-threadpool
+
+
+* Wed Mar 16 2011 Oden Eriksson <oeriksson@mandriva.com> 1.2.7-1mdv2010.2
+- initial Mandriva package (for zarafa-msr)
