@@ -1,7 +1,7 @@
 Summary:	Easy to use object-oriented thread pool framework
 Name:		python-threadpool
 Version:	1.2.7
-Release:	%mkrel 1
+Release:	2
 License:	MIT
 Group:		Development/Python
 URL:		http://chrisarndt.de/projects/threadpool
