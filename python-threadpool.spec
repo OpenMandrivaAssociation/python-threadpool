@@ -6,10 +6,10 @@ License:	MIT
 Group:		Development/Python
 URL:		http://chrisarndt.de/projects/threadpool
 Source0:	http://chrisarndt.de/projects/threadpool/download/threadpool-%{version}.tar.bz2
-BuildRequires:	python-devel
-BuildRequires:	python-setuptools
+BuildRequires:	python2-devel
+BuildRequires:	python2-setuptools
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+
 
 %description
 A thread pool is an object that maintains a pool of worker threads to perform
@@ -24,32 +24,19 @@ work. It's then possible to define callbacks to handle each result as it comes
 in.
 
 %prep
-
-%setup -q -n threadpool-%{version}
+%setup -qn threadpool-%{version}
 
 %build
-PYTHONDONTWRITEBYTECODE= %{__python} setup.py build
+PYTHONDONTWRITEBYTECODE= %{__python2} setup.py build
 
 %install
-rm -rf %{buildroot}
+PYTHONDONTWRITEBYTECODE= %{__python2} setup.py install --prefix=%{_prefix} --root=%{buildroot}
 
-PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --prefix=%{_prefix} --root=%{buildroot}
 
-%clean
-rm -rf %{buildroot}
 
 %files
-%defattr(-,root,root)
 %doc CHANGELOG.txt README.txt TODO.txt doc/*
-%{py_puresitedir}/*
+%{py2_puresitedir}/*
 
 
 
-%changelog
-* Wed Mar 16 2011 Oden Eriksson <oeriksson@mandriva.com> 1.2.7-1mdv2011.0
-+ Revision: 645589
-- import python-threadpool
-
-
-* Wed Mar 16 2011 Oden Eriksson <oeriksson@mandriva.com> 1.2.7-1mdv2010.2
-- initial Mandriva package (for zarafa-msr)
