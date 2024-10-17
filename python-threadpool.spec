@@ -4,7 +4,7 @@ Version:	1.2.7
 Release:	2
 License:	MIT
 Group:		Development/Python
-URL:		http://chrisarndt.de/projects/threadpool
+URL:		https://chrisarndt.de/projects/threadpool
 Source0:	http://chrisarndt.de/projects/threadpool/download/threadpool-%{version}.tar.bz2
 BuildRequires:	python2-devel
 BuildRequires:	python2-setuptools
